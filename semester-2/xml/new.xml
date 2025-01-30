@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<school>
+   <classes>
+        <class1>
+            <students>
+                <student>
+                    <id>345219</id>
+                    <name>abc</name>
+                    <email>abc@gmail.com</email>
+                    <age>19</age>
+                    <batch>AI202418E1</batch>
+                </student>
+            </students>
+        </class1>
+    </classes>
+</school>
