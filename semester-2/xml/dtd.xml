@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE students[
+
+<!ELEMENT students (student+)>
+<!ELEMENT student (id, name, department, (mobile|tel), city?)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT department (#PCDATA)>
+<!ELEMENT mobile (#PCDATA)>
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+
+<!ATTLIST student id CDATA #IMPLIED>
+]>
+
+<students>
+    <student id = "9">
+        <id>1234</id>
+        <name>Ali</name>
+        <department>Computer Science</department>
+        <mobile>0321-3880737</mobile>
+        <city>Karachi</city>
+    </student>
+
+    <student id = "12">
+        <id>5643</id>
+        <name>Ayesha</name>
+        <department>Maths</department>
+        <tel>(402) 357-1614 x393</tel>
+    </student>
+</students>
