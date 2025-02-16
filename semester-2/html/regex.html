@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="demo"></h2>
+</body>
+<script>
+    // let pattern = /[A-Z]/i
+    // let password = "123A"
+    // console.log(pattern.exec(password));
+
+    // let test = "Javascript is a popular programming language. Let's start Javascript";
+    // let result = test.match(/Javascript/ig);
+    // document.getElementById('demo').innerHTML = result;
+
+    // let a = "Hello World";
+    // document.write (a);
+    // let b = a.replace(/World/, "Everyone");
+    // document.getElementById('demo').innerHTML = b;
+
+    var num =parseInt(prompt("Enter your table number: "));
+    var limit = parseInt(prompt("Enter limit of the table: "));
+    for(var i=1; i<=limit; i++){
+        document.write(num + "*" + i + "=" + num*i + "<br>")
+    }
+</script>
+</html>
