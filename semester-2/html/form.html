@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: pink;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: large;
+        text-align: center;
+    }
+    
+    h1 {
+        color: rgb(123, 29, 44);
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    input {
+        height: 30px;
+        border: 1 px solid maroon;
+        font-size: medium;
+        width: 200px;
+        border-radius: 6px;
+    }
+    
+    button {
+        height: 30px;
+        width: 100px;
+        border: 2px solid rgb(65, 5, 5);
+        border-radius: 6px;
+        font-size: medium;
+    }
+</style>
+
+<body>
+
+    <form action="" id="form">
+        <h1>Registration Form</h1>
+        <br>
+        <label for="">Name: </label>
+        <input type="text" placeholder="Enter your Name" required id="name">
+        <br><br>
+        <label for="">Email: </label>
+        <input type="email" placeholder="Enter your Email Address" required id="email">
+        <br><br>
+        <label for="">Password: </label>
+        <input type="password" placeholder="Enter your Password" required id="password">
+        <br><br>
+        <button id="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
+
+<script>
+    document.getElementById("form").addEventListener("submit", function(event) {
+        let name = document.getElementById("name").value;
+        let namePattern = /[A-Za-z ]{3,30}$/;
+
+        let email = document.getElementById("email").value;
+        let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        let password = document.getElementById("password").value;
+        let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+
+        if (!namePattern.test(name) || !emailPattern.test(email) || !passwordPattern.test(password)) {
+            event.preventDefault();
+
+            alert("Please fill out the fields correctly");
+            return;
+        }
+        window.location.href = "formsubmission.html"
+
+    })
+</script>
