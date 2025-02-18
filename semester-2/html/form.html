@@ -68,13 +68,23 @@
         let password = document.getElementById("password").value;
         let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
-        if (!namePattern.test(name) || !emailPattern.test(email) || !passwordPattern.test(password)) {
+        if (!namePattern.test(name)) {
             event.preventDefault();
-
-            alert("Please fill out the fields correctly");
+            alert("Please fill out the name field correctly");
             return;
         }
-        window.location.href = "formsubmission.html"
+
+        if (!emailPattern.test(email)) {
+            event.preventDefault();
+            alert("Please fill out the email field correctly");
+            return;
+        }
+
+        if (!passwordPattern.test(password)) {
+            event.preventDefault();
+            alert("Please fill out the password field correctly");
+            return;
+        }
 
     })
 </script>
