@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,18 @@
 
 <style>
     /* Reset some default styles */
-    body, html {
+    
+    body,
+    html {
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
         height: 100%;
-        background-color: #f4f7fb; /* Light blue background */
+        background-color: #f4f7fb;
+        /* Light blue background */
     }
-
     /* Form container */
+    
     #sampleform {
         width: 100%;
         max-width: 500px;
@@ -26,46 +30,51 @@
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
     /* Title styling */
+    
     h1 {
         text-align: center;
         color: #333;
         font-size: 24px;
         margin-bottom: 20px;
     }
-
     /* Box styling for input fields */
+    
     .box {
         margin-bottom: 20px;
     }
-
+    
     .box label {
         display: block;
         font-size: 14px;
         color: #333;
         margin-bottom: 5px;
     }
-
+    
     .box input {
         width: 100%;
         padding: 12px;
-        border: 2px solid #3498db; /* Blue border */
+        border: 2px solid #3498db;
+        /* Blue border */
         border-radius: 4px;
         font-size: 16px;
-        background-color: #f7f9fc; /* Light blue background for input fields */
+        background-color: #f7f9fc;
+        /* Light blue background for input fields */
         color: #333;
     }
-
+    
     .box input:focus {
-        border-color: #2980b9; /* Darker blue border on focus */
-        background-color: #eaf1fa; /* Light blue background on focus */
+        border-color: #2980b9;
+        /* Darker blue border on focus */
+        background-color: #eaf1fa;
+        /* Light blue background on focus */
         outline: none;
     }
-
     /* Button styling (Submit) */
+    
     .submit-btn {
-        background-color: #3498db; /* Blue background */
+        background-color: #3498db;
+        /* Blue background */
         color: #fff;
         border: none;
         padding: 14px 20px;
@@ -75,72 +84,76 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
-
+    
     .submit-btn:hover {
-        background-color: #2980b9; /* Darker blue on hover */
+        background-color: #2980b9;
+        /* Darker blue on hover */
     }
-
     /* Responsive design */
+    
     @media (max-width: 600px) {
         #sampleform {
             padding: 20px;
         }
-
         .box input {
             padding: 10px;
         }
     }
 </style>
+
 <body>
-   <form action="" id="sampleform" onsubmit="return data()">
-    <div class="box">
-        <label for="uname">User-Name</label>
-        <input type="text" id="name">
-    </div>
+    <form action="" id="sampleform" onsubmit="return data()">
+        <div class="box">
+            <label for="uname">User-Name</label>
+            <input type="text" id="uname">
+        </div>
 
-    <div class="box">
-        <label for="contact">Contact</label>
-        <input type="tel" id="contact">
-    </div>
+        <div class="box">
+            <label for="contact">Contact</label>
+            <input type="tel" id="contact">
+        </div>
 
-    <div class="box">
-        <label for="password">Password</label>
-        <input type="password" id="password">
-    </div>
+        <div class="box">
+            <label for="password">Password</label>
+            <input type="password" id="password">
+        </div>
 
-    <div class="box">
-        <label for="cpassword">Confirm Password</label>
-        <input type="password" id="cpassword">
-    </div>
-    <button class="submit-btn">Submit</button>
-   </form> 
+        <div class="box">
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" id="cpassword">
+        </div>
+        <button class="submit-btn">Submit</button>
+    </form>
 </body>
 
 <script>
-    function data(){
+    function data(event) {
+        event.preventDefault(); // Prevent the form from submitting by default
+
         var uname = document.getElementById("uname").value;
         var contact = document.getElementById("contact").value;
         var password = document.getElementById("password").value;
         var cpassword = document.getElementById("cpassword").value;
+
+        if (uname === "" || contact === "" || password === "" || cpassword === "") {
+            alert("Please fill out all fields!");
+            return false;
+        } else if (isNaN(contact)) {
+            alert("Please input only numbers in Contact field");
+            return false;
+        } else if (contact.length !== 11) {
+            alert("Number should be of 11 digits");
+            return false;
+        } else if (password !== cpassword) {
+            alert("Password and Confirm Password do not match");
+            return false;
+        } else {
+            alert("Form submitted successfully!");
+            return true;
+        }
     }
 
-    if( uname == "" || contact == "" || password == "" || cpassword == ""){
-        alert("Please fill out all fields!");
-        return false;
-    }
-    else if(isNaN(contact)){
-        alert("Please input only numbers in Contact field")
-    }
-    else if(contact.length<11 || contact.length>11){
-        alert("Number should be of 12 digits")
-    }
-    else if(password!=cpassword){
-        alert("Password and Confirm Password do not match")
-    }
-      return true;
-    // document.getElementById("sampleform").addEventListener("submit", ev(){
-    //     ev.preventDefault();
-    //      return false;
-    // })
+    document.getElementById("sampleform").addEventListener("submit", data);
 </script>
+
 </html>
