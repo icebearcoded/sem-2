@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #211624;
+        /* background-color: #f6b8; */
+        color: white;
+        text-decoration: solid;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    
+    .digitalclock {
+        background: linear-gradient(#beddf1, #f6b8d0, #e5ecf8);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    
+    .digitalclock span {
+        margin: 0.5px;
+        /* margin-bottom: 10px; */
+    }
+    
+    h2 {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 80px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #b05be8, #ae4355, #49aff3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+
+<body>
+    <h2>Live Clock</h2>
+    <div class="digitalclock">
+        <span id="hours">00</span>
+        <span>:</span>
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+        <span id="period">PM</span>
+
+    </div>
+</body>
+
+<script>
+    function clock() {
+        var hours = document.getElementById("hours");
+        var minutes = document.getElementById("minutes");
+        var seconds = document.getElementById("seconds");
+        var period = document.getElementById("period");
+
+        var h = new Date().getHours();
+        var m = new Date().getMinutes();
+        var s = new Date().getSeconds();
+        var p = h >= 12 ? "PM" : "AM";
+
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+
+        hours.innerHTML = h;
+        minutes.innerHTML = m;
+        seconds.innerHTML = s;
+        period.innerHTML = p;
+    };
+    setInterval(clock, 1000);
+</script>
+
+</html>
