@@ -31,18 +31,24 @@
             text-align: center;
         }
         
-        .input-div {
-            margin: 15px 0;
+        .converter {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 20px;
+        }
+        
+        .input-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         label {
             font-size: 18px;
             color: #555;
-            margin-right: 15px;
             font-weight: bold;
+            margin-bottom: 5px;
         }
         
         .input {
@@ -63,11 +69,14 @@
             font-size: 2.5rem;
             font-weight: bold;
             color: #4682b4;
-            margin: 0 20px;
-            display: flex;
             justify-content: center;
             align-items: center;
-            height: 60px;
+            padding-top: 30px;
+        }
+        
+        .h2 {
+            background-color: yellow;
+            color: black;
         }
     </style>
 </head>
@@ -75,40 +84,37 @@
 <body>
     <div class="container">
         <h1>Unit Converter</h1>
-        <form action="">
+        <div class="converter">
             <div class="input-div">
-                <label for="feet">Feet</label>
-                <input type="number" value="1" id="feet" class="input">
+                <label for="meter">Meter</label>
+                <input type="number" value="1" id="meter" class="input">
             </div>
+            <span class="equal-sign">=</span>
             <div class="input-div">
-                <span class="equal-sign">=</span>
+                <label for="centimeter">Centimeter</label>
+                <input type="number" value="100" id="centimeter" class="input">
             </div>
-            <div class="input-div">
-                <label for="inch">Inch</label>
-                <input type="number" value="12" id="inch" class="input">
-            </div>
-        </form>
+        </div>
+        <br>
+        <h2>Formula: Multiply the value of meter by 100</h2>
     </div>
 </body>
 
 </html>
 
 <script>
-    var feet = document.getElementById('feet');
-    var inch = document.getElementById('inch');
+    var meter = document.getElementById('meter');
+    var centimeter = document.getElementById('centimeter');
 
-    feet.addEventListener('input', function() {
-        var f = this.value;
-        var i = f * 12;
-        inch.value = i;
+    meter.addEventListener('input', function() {
+        var m = this.value;
+        var c = m * 100;
+        centimeter.value = c;
     })
 
-    inch.addEventListener('input', function() {
-        var i = this.value;
-        var f = i / 12;
-        if (!Number.isInteger(f)) {
-            f = f.toFixed(2)
-        };
-        feet.value = f;
+    centimeter.addEventListener('input', function() {
+        var c = this.value;
+        var m = c / 100;
+        meter.value = m;
     })
 </script>
