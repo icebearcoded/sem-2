@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class railwayform{
+        submit(){
+            alert(this.name + "Form submitted!")
+        }
+        cancel(){
+            alert(this.name + "Form Cancelled!")
+        }
+        fill(givenname){
+            this.name = givenname
+        }
+    }
+
+    let rijaform = new railwayform();
+    rijaform.fill("Rija")
+    let yumnaform = new railwayform();
+    yumnaform.fill("Yumna")
+    rijaform.submit();
+    yumnaform.submit();
+   rijaform.cancel();
+</script>
