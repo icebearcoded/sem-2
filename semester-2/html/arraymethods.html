@@ -69,36 +69,46 @@
     // 1D Array methods
     var numbers = [2, 4, 6, 8, 10, 12, 14, 16]
 
-    // 1.pop
+    // 1.pop()
     numbers.pop();
     console.log("After pop:", numbers);
 
+    // 2.push()
     numbers.push(18);
     console.log("After push:", numbers);
 
+    //3.shift()
     numbers.shift();
     console.log("After shift:", numbers);
 
+    //4.unshift()
     numbers.unshift(1);
     console.log("After unshift:", numbers);
 
+    //5.concat()
     var x = [20, 22, 24];
     var merge = numbers.concat(x);
     console.log("After concat:", merge);
 
+    //6.slice()
     var slice = numbers.slice(2, 5);
     console.log("After slice:", slice);
 
+    //7.splice()
     numbers.splice(3, 2, 99, 100);
     console.log("After splice:", numbers);
 
+    //8.indexof()
     console.log("Index of 10:", numbers.indexOf(10));
 
+    //9.lastindexof()
     var repeat = [2, 4, 6, 8, 10, 6, 12, 6];
     console.log("Last index of 6:", repeat.lastIndexOf(6));
 
+    //10.filter()
     var even = numbers.filter(num => num % 6 === 0);
     console.log("Numbers divisible by 6:", even);
 
+    //11.join()
     document.write("Joined string:", numbers.join(" + "));
 </script>
