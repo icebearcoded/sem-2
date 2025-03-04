@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+</head>
+<body>
+   <div class="container mt-5">
+    <div class="row" id="animal container"></div>
+   </div>
+</body>
+</html>
+
+<script>
+    var a =
+    [
+        ["Kitty", 1203, "This adorable kitten is playful, curious, and full of love! With soft fur and big, bright eyes, it's sure to steal your heart. Perfect for anyone looking for a sweet, cuddly companion!", "/kitten.jpg"],
+
+        ["Dog", 1204, "This playful puppy is full of love and energy! With a wagging tail and big, bright eyes, its the perfect companion for any home. Sweet, affectionate, and ready to bring joy to your life!", "/dog.jpeg"],
+
+        ["LoveBird", 1205, "A charming and colorful lovebird, full of personality and affection! Known for their playful nature and sweet chirps, these little birds make perfect companions. Social, lively, and always ready to bring joy to any home.", "/lovebird.jpg"],
+
+        ["Panda", 1206, "Meet the adorable panda  with its fluffy fur, round face, and gentle nature, its pure cuteness and joy wrapped in black-and-white!", "/panda.jpg"],
+
+        ["Finch", 1207, "A delightful and vibrant finch, full of energy and charm! With its colorful plumage and cheerful song, this little bird brings brightness and joy to any home. Social Bird", "/finch.webp"],
+
+        ["Rabbit", 1208, "This cute and cuddly rabbit is full of charm! With soft fur, long ears, and a playful hop, its the perfect pet for any home. Friendly, gentle, and easy to care for, this little bunny will bring warmth and joy to your life!", "/rabbit1.jpeg"]
+    ]
+    var html = "";
+    for(var data of a){
+        html+=`<div class="col-md-4 mb-4">
+    <div class="card shadow-lg border-0">
+        <img src="${data[3]}" alt="" class="card-image-top" style="height: 250px; object-fit: cover;">
+        <div class="card-body text-center">
+                <h5 class="card-title font-weight-bold">Name: ${data[0]}</h5>
+                <p class="card-text text-primary font-weight-bold">ID: ${data[1]}</p>
+                <p class="card-text text-success">Description: ${data[2]}</p>
+                <a href="#" class="btn btn-primary">Click Here</a>
+        </div>
+    </div>
+</div>
+        `
+    }
+    document.getElementById("animal container").innerHTML= html;
+</script>
+ 
+
